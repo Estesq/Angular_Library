@@ -1,0 +1,65 @@
+<mat-toolbar color="primary" >
+    <span style="margin-left:20px;">Add Book</span>
+</mat-toolbar>
+<div class="container">
+        <mat-card>
+                <form [formGroup]="service.bookForm" (submit)="onSubmitaddBook()">
+                <mat-card-header> 
+                        <mat-card-title>Add New Book</mat-card-title>
+                        <mat-card-subtitle>Fill the details</mat-card-subtitle>
+                      </mat-card-header>
+                      <mat-divider></mat-divider>
+                      <br>
+                      <mat-card-content>
+                              <input type="hidden" formControlName="_id">
+                <mat-grid-list cols="3" rowHeight="100">
+                        <mat-grid-tile>
+                            <div class="form-container">
+                                <mat-form-field appearance="outline">
+                                        <mat-label>Enter Book Name *</mat-label>
+                                        <input matInput formControlName="name" placeholder="Book Name">
+                                        <mat-icon matSuffix>book</mat-icon>
+                                        <mat-error>This field is mandatory</mat-error>
+                                      </mat-form-field></div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <div class="form-container">
+                                <mat-form-field appearance="outline">
+                                        <mat-label>Enter Author Name *</mat-label>
+                                        <input matInput formControlName="author" placeholder="Author Name">
+                                        <mat-icon matSuffix>person</mat-icon>
+                                        <mat-error>This field is mandatory</mat-error>
+                                      </mat-form-field></div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <div class="form-container">
+                                <mat-form-field appearance="outline">
+                                        <mat-label>Total Copies *</mat-label>
+                                        <input type="number" matInput formControlName="copies" placeholder="Copies">
+                                     <mat-icon matSuffix>file_copy</mat-icon>
+                                     <mat-error>This field is mandatory</mat-error>
+                                      </mat-form-field></div>
+                        </mat-grid-tile>
+                </mat-grid-list>
+                <mat-grid-list cols="3" rowHeight="100">
+                        <mat-grid-tile>
+                            <div class="form-container">
+                                <mat-form-field appearance="outline">
+                                        <mat-label>Enter Book Category *</mat-label>
+                                        <input matInput formControlName="category" placeholder="Book Category">
+                                        <mat-icon matSuffix>category</mat-icon>
+                                        <mat-error>This field is mandatory</mat-error>
+                                      </mat-form-field></div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-card-actions>
+                                        <button mat-raised-button type="submit" color="primary">Add Book</button>
+                                      </mat-card-actions>
+                        </mat-grid-tile>
+                </mat-grid-list>
+               </mat-card-content>
+        </form>
+        </mat-card>
+    </div>

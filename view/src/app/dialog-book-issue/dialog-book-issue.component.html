@@ -1,0 +1,27 @@
+<!-- <p>dialog-book-issue works!</p> -->
+<mat-card class="mat-elevation-z3">
+    <mat-card-header>
+            <mat-card-title>Issue Book</mat-card-title>
+          </mat-card-header>
+          <mat-divider></mat-divider>
+          <br>
+          <mat-card-content>
+    <mat-grid-list cols="2" rowHeight="100">
+        <form [formGroup]="service.issuedBook" (submit)="onSubmitissueBook()">
+            <mat-grid-tile>
+                <div class="form-container">
+                    <mat-form-field appearance="outline">
+                            <mat-label>Enter Phone No Of Student</mat-label>
+                            <input type="number" matInput formControlName="phone" placeholder="Phone No">
+                            <mat-icon matSuffix>phone</mat-icon>
+                          </mat-form-field></div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+        <mat-card-actions>
+          <button mat-raised-button type="submit" color="primary">Issue Book</button>  
+         </mat-card-actions>
+            </mat-grid-tile>
+            </form>
+    </mat-grid-list>
+   </mat-card-content>
+</mat-card>

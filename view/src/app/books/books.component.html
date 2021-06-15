@@ -1,0 +1,59 @@
+<mat-toolbar color="primary" >
+        <span style="margin-left:20px;">Books</span>
+</mat-toolbar>
+<div class="container">
+              <mat-form-field appearance="outline">
+                    <mat-label>Enter book name to search the book</mat-label>
+                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Enter book name to search the book">
+                    <mat-icon matSuffix>search</mat-icon>
+                  </mat-form-field>
+
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource">
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Book Id No. </th>
+            <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+      
+          <!-- Weight Column -->
+          <ng-container matColumnDef="author">
+            <th mat-header-cell *matHeaderCellDef> Author Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.author}} </td>
+          </ng-container>
+      
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef> Category </th>
+            <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="copies">
+              <th mat-header-cell *matHeaderCellDef> Total Copies </th>
+              <td mat-cell *matCellDef="let element"> {{element.copies}} </td>
+            </ng-container>
+
+         <ng-container matColumnDef="availableCopies">
+                <th mat-header-cell *matHeaderCellDef> Available Copies </th>
+                <td mat-cell *matCellDef="let element"> {{element.availableCopies}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef> Action </th>
+              <td mat-cell *matCellDef="let element"> <button mat-raised-button (click)="openDialog(element._id)">Issue Book</button> </td>
+        </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      
+  <mat-paginator [pageSizeOptions]="[5,10, 15 , 20]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+      </div>
+</div>

@@ -1,0 +1,63 @@
+<mat-toolbar color="primary" >
+        <span style="margin-left:20px;">Student registration</span>
+</mat-toolbar>
+<div class="container">
+    <mat-card>
+                <form [formGroup]="service.studForm" (submit)="onSubmitaddstudent()">
+            <mat-card-header>
+                    <mat-card-title>Student Registration Form</mat-card-title>
+                    <mat-card-subtitle>Fill the details</mat-card-subtitle>
+                  </mat-card-header>
+                  <mat-divider></mat-divider>
+                  <br>
+                  <mat-card-content>
+            <mat-grid-list cols="3" rowHeight="100">
+                        <input type="hidden" formControlName="_id">
+                    <mat-grid-tile>
+                        <div class="form-container">
+                            <mat-form-field appearance="outline">
+                                    <mat-label>Enter Name</mat-label>
+                                    <input matInput formControlName="name" placeholder="Name">
+                                    <mat-icon matSuffix>person</mat-icon>
+                                  </mat-form-field></div>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                            <div class="form-container">
+                            <mat-form-field appearance="outline">
+                                    <mat-label>Enter Phone no</mat-label>
+                                    <input type="number" matInput formControlName="phone" placeholder="Phone no">
+                                    <mat-icon matSuffix>local_phone</mat-icon>
+                                  </mat-form-field></div>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                            <div class="form-container">
+                            <mat-form-field appearance="outline">
+                                    <mat-label>Enter Email-id</mat-label>
+                                    <input matInput formControlName="email" placeholder="Email-id">
+                                 <mat-icon matSuffix>email</mat-icon>
+                                  </mat-form-field></div>
+                    </mat-grid-tile>
+            </mat-grid-list>
+            <mat-grid-list cols="3" rowHeight="100">
+                    <mat-grid-tile>
+                        <div class="form-container">
+                            <mat-form-field appearance="outline">
+                                    <mat-label>Set Password</mat-label>
+                                    <input type="password" matInput formControlName="password" placeholder="Password">
+                                    <mat-icon matSuffix>password</mat-icon>
+                                  </mat-form-field></div>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                            
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                            
+                    </mat-grid-tile>
+            </mat-grid-list>
+           </mat-card-content>
+           <mat-card-actions style="text-align: end;margin-right: 10px;">
+                <button mat-raised-button type="submit" color="primary">Register Student</button>
+              </mat-card-actions>
+              </form>
+    </mat-card>
+</div>
